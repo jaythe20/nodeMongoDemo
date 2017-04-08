@@ -10,7 +10,12 @@ var users = require('./routes/users');
 
 //mongoose ODM
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://demo:kernel18@ds147510.mlab.com:47510/standup')
+var mongoURI = "mongodb://jaythe2012:kernel2012@localhost:27017/standup";
+var MongoDB = mongoose.connect(mongoURI).connection;
+MongoDB.on('error', function(err) { console.log(err.message); });
+MongoDB.once('open', function() {
+    console.log("mongodb connection open");
+});
 
 var app = express();
 
