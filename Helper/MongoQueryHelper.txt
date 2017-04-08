@@ -1,0 +1,10 @@
+//Mongo Query Syntax Helper
+
+
+***GET
+1. Model.find(conditions, [fields], [options], [callbacks])
+-  E.g. collection.find({condition 1: '1'}, function(err, results){}
+
+2. Model.findOne(conditions, [fields], [options], [callbacks])
+
+3. Model.findById(id,[fields], [options], [callbacks])
