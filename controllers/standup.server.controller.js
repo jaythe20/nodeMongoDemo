@@ -26,3 +26,36 @@ exports.getNote = function(req, res){
 		res.json(result);
     });
 };
+
+
+//Get All
+exports.list = function (req,res) {
+
+	var query = StandUp.find();
+	query.sort({createdOn : 'desc'})
+		.limit(15)
+		.exec(function (err, results) {
+			return res.json(results);
+        });
+
+};
+
+exports.filterByMember = function (req, res) {
+    var query = StandUp.find();
+    var filter = req.body.memberName;
+
+    query.sort({createdOn : 'desc'});
+
+    if(filter.length > 0)
+	{
+		query.where({memberName : filter});
+	}
+
+	query.exec(function (err, results) {
+		return res.json(results);
+    });
+
+
+
+
+};
