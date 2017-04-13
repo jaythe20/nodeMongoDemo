@@ -15,4 +15,4 @@ var standUpSchema = new Schema({
 });
 
 //Export model
-module.exports = mongoose.model('StandUp',standUpSchema, 'StandUpList');
+module.exports =  mongoose.model('StandUp',standUpSchema, 'StandUpList');
